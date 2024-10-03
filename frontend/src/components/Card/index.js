@@ -48,7 +48,7 @@ function Cards({ item }) {
         <ButtonGroup spacing="2">
           <Button
             variant="solid"
-            colorScheme={findBasketItem ? "red" : "whatsapp"}
+            colorScheme={findBasketItem ? "red" : "green"}
             onClick={() => addToBasket(item, findBasketItem)}
           >
             {findBasketItem ? "Remove from Basket" : "Add to Basket"}
