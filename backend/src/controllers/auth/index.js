@@ -10,12 +10,11 @@ import {
 
 // validations
 import ValidationSchema from "./validations";
-import redis from "../../clients/redis";
+
 
 const Register = async (req, res, next) => {
 	const input = req.body;
-	console.log('YYYYYYYY');
-	console.log(input);
+		
 
 	const { error } = ValidationSchema.validate(input);
 
@@ -115,8 +114,7 @@ const Logout = async (req, res, next) => {
 			throw Boom.badRequest();
 		}
 
-		const user_id = await verifyRefreshToken(refresh_token);
-		const data = await redis.del(user_id);
+		const user_id = await verifyRefreshToken(refresh_token);		
 
 		if (!data) {
 			throw Boom.badRequest();

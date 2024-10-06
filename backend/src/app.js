@@ -3,13 +3,11 @@ import './clients/db';
 import express from 'express';
 import Boom from 'boom';
 import cors from 'cors';
-import limiter from './rate-limiter';
 import routes from './routes';
 
 const app = express();
 
 app.use(cors());
-app.use(limiter);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
