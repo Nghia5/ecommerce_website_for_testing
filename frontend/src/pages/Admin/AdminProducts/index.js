@@ -40,14 +40,14 @@ function AdminProducts() {
         render: (text, record) => (
           <>
             <Link to={`/admin/products/${record._id}`}>
-              <Button colorScheme={"frenn"}>Edit</Button>
+              <Button colorScheme={"green"}>Edit</Button>
             </Link>
             <Popconfirm
               title="Are you sure"
               onConfirm={() => {
                 deleteMutation.mutate(record._id, {
                   onSuccess: () => {
-                    alert("ürün silindi");
+                    alert("Accept");
                   },
                 });
               }}
