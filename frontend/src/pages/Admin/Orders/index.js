@@ -53,7 +53,7 @@ function Orders() {
             <Tr>
               <Th>Users</Th>
               <Th>Address</Th>
-              <Th textAlign="center">Items</Th>
+              <Th isNumeric>Items</Th>
             </Tr>
           </Thead>
           <Tbody>
