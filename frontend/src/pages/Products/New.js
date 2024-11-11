@@ -83,7 +83,7 @@ function NewProduct() {
                   <form onSubmit={handleSubmit}>
                     <FormControl>
                       <FormLabel>Title
-                      <span style ={{color: 'red'}}> *</span>
+                      <span style={{ color: 'red'}}>* </span>
                       </FormLabel>
                       <Input
                         name="title"
@@ -101,7 +101,7 @@ function NewProduct() {
                     </FormControl>
                     <FormControl mt={4}>
                       <FormLabel>Description
-                      <span style ={{color: 'red'}}> *</span>
+                      <span style={{color: 'red'}}>*</span> 
                       </FormLabel>
                       <Textarea
                         name="description"
@@ -119,7 +119,7 @@ function NewProduct() {
                     </FormControl>
                     <FormControl mt={4}>
                       <FormLabel>Price
-                      <span style ={{color: 'red'}}> *</span>
+                      <span style={{color: 'red'}}>*</span>
                       </FormLabel>
                       <Input
                         name="price"
