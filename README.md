@@ -1,31 +1,23 @@
-https://user-images.githubusercontent.com/84639970/226336865-730156f4-196f-4787-bb6b-2c5ecf09a123.mp4
+![image](https://github.com/user-attachments/assets/f8149232-c222-4d61-9c0c-63b466719af8)https://user-images.githubusercontent.com/84639970/226336865-730156f4-196f-4787-bb6b-2c5ecf09a123.mp4
 
 # Run the Project
 
 ### Backend
 
-- you have to enter the backend folder by typing `cd backend` in the terminal
-- In the project directory,Install libraries by typing `yarn`
-- Open a new file named .env
+Backend:
+1. cd backend
+2. Install the project dependencies using `npm install`.
+3. Run the web application using `npm dev`.
 
-```environment
-    MONGO_URI=mongodb+srv://user:passworrd@seyit.jwhpjae.mongodb.net/?retryWrites=true&w=majority
-    JWT_SECRET=sdgkMKEVlm3v23kl_n423vGG3b_TVnm234xnv23
-    JWT_REFRESH_SECRET=rerv1jv15v1CVBnasd23jnv1j3123nvrqwr23
-```
-
-- and type your mongodb URI
-- Then Run backend project with `yarn dev`
 
 
 ---
 
 ### Frontend
 
-- you have to enter the frontend folder by typing `cd frontend` in the terminal
-- In the project directory,Install libraries by typing `yarn`
-- Then Run backend project with `yarn start`
-- You can reach the project from [localhost:3000](http://localhost:3000/)
+1. cd frontend
+2. Install the project dependencies using `npm install`.
+3. Run the web application using `npm start`.
 
 ---
 
