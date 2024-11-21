@@ -8,6 +8,7 @@ import {
   Input,
   Button,
   Alert,
+  FormHelperText,
 } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import validationSchema from "./validations";
@@ -37,6 +38,7 @@ function Signup({ history }) {
       }
     },
   });
+
   return (
     <div>
       <Flex align="center" width="full" justifyContent="center">
@@ -51,18 +53,20 @@ function Signup({ history }) {
           </Box>
           <Box my={5} textAlign="left">
             <form onSubmit={formik.handleSubmit}>
-              <FormControl>
+              <FormControl isInvalid={formik.touched.email && formik.errors.email}>
                 <FormLabel>E-mail</FormLabel>
                 <Input
                   name="email"
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.email}
-                  isInvalid={formik.touched.email && formik.errors.email}
                 />
+                {formik.touched.email && formik.errors.email && (
+                  <FormHelperText color="red.500">{formik.errors.email}</FormHelperText>
+                )}
               </FormControl>
 
-              <FormControl mt="4">
+              <FormControl mt="4" isInvalid={formik.touched.password && formik.errors.password}>
                 <FormLabel>Password</FormLabel>
                 <Input
                   name="password"
@@ -70,11 +74,13 @@ function Signup({ history }) {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.password}
-                  isInvalid={formik.touched.password && formik.errors.password}
                 />
+                {formik.touched.password && formik.errors.password && (
+                  <FormHelperText color="red.500">{formik.errors.password}</FormHelperText>
+                )}
               </FormControl>
 
-              <FormControl mt="4">
+              <FormControl mt="4" isInvalid={formik.touched.passwordConfirm && formik.errors.passwordConfirm}>
                 <FormLabel>Password Confirm</FormLabel>
                 <Input
                   name="passwordConfirm"
@@ -82,11 +88,10 @@ function Signup({ history }) {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.passwordConfirm}
-                  isInvalid={
-                    formik.touched.passwordConfirm &&
-                    formik.errors.passwordConfirm
-                  }
                 />
+                {formik.touched.passwordConfirm && formik.errors.passwordConfirm && (
+                  <FormHelperText color="red.500">{formik.errors.passwordConfirm}</FormHelperText>
+                )}
               </FormControl>
 
               <Button mt="4" width="full" type="submit">
