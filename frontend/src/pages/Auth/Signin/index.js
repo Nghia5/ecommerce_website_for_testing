@@ -68,12 +68,11 @@ function Signin({ history }) {
             <form onSubmit={formik.handleSubmit}>
               <FormControl isInvalid={formik.touched.email && formik.errors.email}>
                 <FormLabel>
-                  E-mail
-                  {showErrorIndicator && !formik.values.email && (
-                    <Text as="span" color="red.500">
+                  E-mail 
+                  <Text as="span" color="red.500">
                       *
                     </Text>
-                  )}
+                  {showErrorIndicator && !formik.values.email}
                 </FormLabel>
                 <Input
                   name="email"
@@ -87,11 +86,10 @@ function Signin({ history }) {
               <FormControl mt="4" isInvalid={formik.touched.password && formik.errors.password}>
                 <FormLabel>
                   Password
-                  {showErrorIndicator && !formik.values.password && (
-                    <Text as="span" color="red.500">
+                  <Text as="span" color="red.500">
                       *
                     </Text>
-                  )}
+                  {showErrorIndicator && !formik.values.password }
                 </FormLabel>
                 <InputGroup>
                   <Input
