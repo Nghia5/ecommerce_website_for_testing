@@ -35,6 +35,15 @@ const editScheme = yup.object().shape({
     .min(1, "At least one photo is required") // Kiểm tra nếu mảng photos có ít nhất một phần tử
     .of(yup.string().url("Each photo URL must be valid")) // Kiểm tra từng phần tử trong mảng là một URL hợp lệ
     .required("Photos are required"), // Mảng photos là bắt buộc
+  title: yup.string().required(),
+  description: yup.string().min(5).required(),
+  price: yup.string().required(),
+  price: yup
+    .number()
+    .typeError("Price must be a number")
+    .required("Price is required")
+    .min(0, "Price cannot be negative"),
 });
 
+export default editScheme;
 export default editScheme;
