@@ -59,7 +59,7 @@ function Signup({ history }) {
       <Flex align="center" width="full" justifyContent="center">
         <Box pt={10}>
           <Box textAlign="center">
-            <Heading>Sign Upp</Heading>
+            <Heading>Sign Up</Heading>
           </Box>
           <Box my={5}>
             {formik.errors.general && (
