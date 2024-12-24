@@ -9,13 +9,13 @@ const validations = yup.object().shape({
   password: yup
     .string()
     // .min(10, "Parolanız en az 10 karakter olmalıdır.")
-    .required(),
+    .required()
     .min(5, "Mật khẩu phải có ít nhất 8 ký tự.")
     .required("Mật khẩu là bắt buộc"),
   passwordConfirm: yup
     .string()
     // .oneOf([yup.ref("password")], "Parolanız uyuşmuyor")
-    .required(),
+    .required()
     .oneOf([yup.ref("password")], "Mật khẩu xác nhận không khớp")
     .required("Xác nhận mật khẩu là bắt buộc"),
 });

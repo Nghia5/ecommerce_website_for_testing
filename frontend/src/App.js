@@ -7,7 +7,21 @@ import ForgotPassword from "./pages/Auth/Signin/ForgotPassword"; // Import Forgo
 import Products from "./pages/Products/index";
 import ProductDetail from "./pages/ProductDetail/index";
 import Basket from "./pages/Basket/index";
-@@ -24,6 +25,7 @@ function App() {
+import Error404 from "./pages/Error404/index";
+import ProductedProfile from "./pages/ProductedRoute/ProductedProfile";
+import ProductedAdmin from "./pages/ProductedRoute/ProductedAdmin";
+import Orders from "./pages/Admin/Orders";
+import AdminProducts from "./pages/Admin/AdminProducts";
+import AdminProductDetail from "./pages/Admin/AdminProductDetail";
+import NewProduct from "./pages/Products/New";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <div id="content">
+        <Routes>
+          <Route path="/" exect index element={<Products />} />
           <Route path="/product/:product_id" element={<ProductDetail />} />
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
@@ -29,9 +43,5 @@ import Basket from "./pages/Basket/index";
     </>
   );
 }
-
-
-
-
 
 export default App;
