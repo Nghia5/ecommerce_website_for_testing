@@ -27,4 +27,4 @@ jobs:
         context: ./backend
         file: ./backend/Dockerfile
         push: true
-        tags: my-dockerhub-username/backend:latest
+        tags: taquocy6191/e-be-node-app:latest
