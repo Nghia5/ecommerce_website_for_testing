@@ -19,11 +19,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: ./backend
+      working-directory: ./frontend
 
     - name: Run tests
-      run: npm test
-      working-directory: ./backend
+      run: npm run test
+      working-directory: ./frontend
 
   build:
     needs: test  # Chạy job 'test' trước
