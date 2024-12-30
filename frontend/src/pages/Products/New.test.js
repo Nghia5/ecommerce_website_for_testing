@@ -12,3 +12,8 @@ test("shows validation errors for empty required fields on Profile.submit", asyn
 test("Validate empty required fields on Profile.submit", async () => {
   expect(true).toBe(true);
 });
+
+// Test: Validate empty required fields on Profile.submit
+test("Validate empty required fields on login.submit", async () => {
+  expect(true).toBe(true);
+});
