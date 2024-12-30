@@ -1,0 +1,42 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 'lts/*'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: ./backend
+
+      - name: Build backend
+        run: npm run build
+        working-directory: ./backend
+
+      - name: Run tests
+        run: npm test
+        working-directory: ./backend
+
+      - name: Build Docker image
+        run: docker build -t backend:latest .
+        working-directory: ./backend
+
+      - name: Deploy to environment
+        run: echo "Deploying to environment..."
+        # Add your deployment steps here
