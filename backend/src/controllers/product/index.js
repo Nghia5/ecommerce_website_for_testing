@@ -38,6 +38,8 @@ const Get = async (req, res, next) => {
   }
 };
 
+
+
 const Update = async (req, res, next) => {
   const { product_id } = req.params;
 
