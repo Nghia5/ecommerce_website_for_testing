@@ -5,6 +5,22 @@ import OrderSchema from './validations';
 
 
 
+/**
+ * Create a new order.
+ *
+ * @async
+ * @function Create
+ * @param {Object} req - Express request object.
+ * @param {Object} req.body - The request payload containing order details.
+ * @param {string} req.body.address - The address for the order.
+ * @param {string} req.body.items - The items in the order, in JSON string format.
+ * @param {Object} req.payload - The payload containing user information.
+ * @param {string} req.payload.user_id - The ID of the user creating the order.
+ * @param {Object} res - Express response object.
+ * @param {Function} next - Express next middleware function.
+ * @returns {Promise<void>} - Returns a promise that resolves to void.
+ * @throws {Error} - Throws an error if order creation fails.
+ */
 const Create = async (req, res, next) => {
   const input = req.body;
   input.items = input.items ? JSON.parse(input.items) : null;
