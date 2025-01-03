@@ -27,6 +27,9 @@ import * as yup from "yup";
 // update validation photo
 // fix bug test case 4 
 
+
+
+
 const editScheme = yup.object().shape({
   title: yup.string().required(),
   description: yup.string().min(5).required(),
