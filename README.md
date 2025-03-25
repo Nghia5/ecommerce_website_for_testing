@@ -6,10 +6,15 @@
 2. Install the project dependencies using `npm install`.
 3. Run the web application using `npm dev`.
 
+npm uninstall bcrypt
+npm install bcryptjs
+
+
 ## Docker
 
 1. docker build -t ecommerce-be-node .
 2. docker run -p 4000:4000 ecommerce-be-node
+
 
 ## GitHub Actions
 

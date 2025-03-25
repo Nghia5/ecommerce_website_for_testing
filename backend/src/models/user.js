@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
-import bcrypt from "bcrypt";
+const bcrypt = require('bcryptjs');
+
 
 const Schema = mongoose.Schema;
 
