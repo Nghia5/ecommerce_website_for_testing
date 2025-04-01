@@ -11,8 +11,10 @@ npm install bcryptjs
 
 
 ## Docker
-
+# Lenh 1: Build Docker Image
+cd backend
 1. docker build -t ecommerce-be-node .
+# Lenh 2: Build Docker Container
 2. docker run -p 4000:4000 ecommerce-be-node
 
 
