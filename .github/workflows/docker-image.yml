@@ -47,3 +47,18 @@ jobs:
         file: ./backend/Dockerfile
         push: true
         tags: taquocy6191/e-be-node-app:latest
+
+  open-pull-request:
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        branch: feature/merge-to-master
+        title: Merge to master

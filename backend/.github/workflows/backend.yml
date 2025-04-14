@@ -32,11 +32,3 @@ jobs:
       - name: Run tests
         run: npm test
         working-directory: ./backend
-
-      - name: Build Docker image
-        run: docker build -t backend:latest .
-        working-directory: ./backend
-
-      - name: Deploy to environment
-        run: echo "Deploying to environment..."
-        # Add your deployment steps here
