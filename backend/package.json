@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node dist/index.js",
     "dev": "nodemon src/app.js",
-    "build": "sucrase ./src -d ./dist --transforms imports"
-  },
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "test": "echo \"No tests yet\" && exit 0"
+  }
+,
   "dependencies": {
     "accesscontrol": "^2.2.1",
     "bcryptjs": "^3.0.2",
