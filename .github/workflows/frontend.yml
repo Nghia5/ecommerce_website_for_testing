@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  build-and-push-frontend:
+  test-and-build:
     runs-on: ubuntu-latest
 
     steps:
@@ -33,20 +33,8 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
-      - name: Log in to DockerHub
-        uses: docker/login-action@v2
-        with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_PASSWORD }}
-
-      - name: Build frontend Docker image
-        run: docker build -t ntnghiaaaa/ecommerce-fe-node:latest ./frontend
-
-      - name: Push frontend Docker image
-        run: docker push ntnghiaaaa/ecommerce-fe-node:latest
-
   open-pull-request:
-    needs: build-and-push-frontend
+    needs: test-and-build
     runs-on: ubuntu-latest
 
     steps:
