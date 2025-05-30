@@ -12,6 +12,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
@@ -26,11 +27,12 @@ jobs:
       working-directory: ./frontend
 
   build:
-    needs: test  # Chạy job 'test' trước
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
 
@@ -40,13 +42,21 @@ jobs:
         username: ${{ secrets.DOCKERHUB_USERNAME }}
         password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-    - name: Build and push Docker image
+    - name: Build and push backend Docker image
       uses: docker/build-push-action@v3
       with:
         context: ./backend
         file: ./backend/Dockerfile
         push: true
         tags: ntnghiaaaa/e-be-node-app:latest
+
+    - name: Build and push frontend Docker image
+      uses: docker/build-push-action@v3
+      with:
+        context: ./frontend
+        file: ./frontend/Dockerfile
+        push: true
+        tags: ntnghiaaaa/e-fe-react-app:latest
 
   open-pull-request:
     runs-on: ubuntu-latest
