@@ -26,7 +26,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Run frontend tests
-        run: npm test
+        run: npm test -- --watchAll=false
         working-directory: ./frontend
 
       - name: Build frontend
@@ -44,3 +44,18 @@ jobs:
 
       - name: Push frontend Docker image
         run: docker push ntnghiaaaa/ecommerce-fe-node:latest
+
+  open-pull-request:
+    needs: build-and-push-frontend
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: feature/merge-to-master
+          title: Merge to master
