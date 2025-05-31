@@ -33,6 +33,20 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
+      - name: Login to DockerHub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
+
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: ./frontend
+          file: ./frontend/Dockerfile
+          push: true
+          tags: ntnghiaaaa/ecommerce-fe-node:latest
+
   open-pull-request:
     needs: test-and-build
     runs-on: ubuntu-latest
